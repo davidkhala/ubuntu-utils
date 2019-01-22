@@ -4,4 +4,7 @@ NOPASSWD(){
     local userGroup="sudo"
     echo "$userGroup  ALL=(ALL) NOPASSWD: ALL" | sudo tee --append /etc/sudoers
 }
+TIMEZONE(){
+    sudo dpkg-reconfigure tzdata # will have interactive operation
+}
 $fcn
