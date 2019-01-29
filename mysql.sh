@@ -6,11 +6,14 @@ done
 function install() {
 	sudo apt install mysql-server
 }
+function installWorkBench() {
+	sudo apt install mysql-workbench
+}
 function start() {
 	systemctl start mysql
 }
 function setRootPassword() {
-    echo "targeted new password [$1]"
+	echo "targeted new password [$1]"
 	mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
 }
 $1 $remain_params
