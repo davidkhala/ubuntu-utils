@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 install(){
-    sudo apt install chrony
+    sudo apt install -y chrony
 }
 config(){
     vi /etc/chrony/chrony.conf
