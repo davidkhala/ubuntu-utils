@@ -14,6 +14,7 @@ status(){
 }
 help(){
     echo "Reference in https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/set-time.html"
+    echo "chrony use port: UDP 323"
 }
 sync(){
     sudo chronyc makestep
