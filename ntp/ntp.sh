@@ -6,4 +6,5 @@ install(){
 sync(){
     sudo ntpdate -u "time.windows.com"
 }
+
 $1
