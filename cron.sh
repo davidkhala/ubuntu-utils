@@ -7,7 +7,7 @@ for ((i = 2; i <= $#; i++)); do
 done
 sysCronTab="/etc/crontab"
 function addJob() {
-    local newLine=$1
+    local newLine=$remain_params
     echo "*  *	* * *	root	$newLine" | sudo tee -a $sysCronTab
     sudo /etc/init.d/cron restart
 }
