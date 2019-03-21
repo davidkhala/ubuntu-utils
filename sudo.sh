@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 fcn=$1
 NOPASSWD(){
     # dangerous: allow user run sudo without password
