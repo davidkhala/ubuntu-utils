@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 install() {
-    sudo apt install -y apache2
+    sudo apt install -y php 
 }
 $1
