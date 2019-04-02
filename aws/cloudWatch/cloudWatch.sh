@@ -32,7 +32,7 @@ push(){
 cron(){
     sysCronTab="/etc/crontab"
 	if ! grep "disk-space-util" $sysCronTab; then
-		echo "* * * * *  $USER $workDir/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron" | sudo tee -a $sysCronTab
+		echo "*/5 * * * *  $USER $workDir/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron" | sudo tee -a $sysCronTab
 		sudo /etc/init.d/cron restart
 	fi
 }
