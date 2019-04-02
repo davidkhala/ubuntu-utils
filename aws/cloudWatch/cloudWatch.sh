@@ -22,7 +22,7 @@ config(){
 push(){
     local key=$1
     local secret=$2 
-    CMD="$workDir/mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --disk-space-util --disk-path=/"
+    CMD="$workDir/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/"
     if [[ -n "$secret" ]];then
         CMD="$CMD --aws-access-key-id=$key --aws-secret-key=$secret"
     fi
@@ -32,7 +32,7 @@ push(){
 cron(){
     sysCronTab="/etc/crontab"
 	if ! grep "disk-space-util" $sysCronTab; then
-		echo "* * * * *  $USER $workDir/mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --disk-space-util --disk-path=/ --from-cron" | sudo tee -a $sysCronTab
+		echo "* * * * *  $USER $workDir/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron" | sudo tee -a $sysCronTab
 		sudo /etc/init.d/cron restart
 	fi
 }
