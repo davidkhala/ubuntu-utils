@@ -29,4 +29,12 @@ push(){
     echo $CMD
     $CMD
 }
+cron(){
+    sysCronTab="/etc/crontab"
+	if ! grep "disk-space-util" $sysCronTab; then
+		echo "*/5 * * * * $workDir/mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --disk-space-util --disk-path=/ --from-cron" | sudo tee -a $sysCronTab
+		sudo /etc/init.d/cron restart
+	fi
+}
+
 $1 $remain_params
