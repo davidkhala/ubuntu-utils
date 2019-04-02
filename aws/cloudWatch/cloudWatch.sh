@@ -8,8 +8,8 @@ for ((i = 2; i <= $#; i++)); do
 	remain_params="$remain_params $j"
 done
 prepare(){
-    sudo apt-get install unzip
-    sudo apt-get install libwww-perl libdatetime-perl
+    sudo apt-get install -y unzip
+    sudo apt-get install -y libwww-perl libdatetime-perl
 }
 
 config(){
