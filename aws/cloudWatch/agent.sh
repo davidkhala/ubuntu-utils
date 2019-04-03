@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+CURRENT=$(cd $(dirname ${BASH_SOURCE}) && pwd)
 agentCommonConfigPath="/opt/aws/amazon-cloudwatch-agent/etc/common-config.toml"
 
 install(){
@@ -14,3 +14,4 @@ start(){
     # TODO is it for ec2 only? 
     sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:${configurationFilePath} -s
 }
+$1
