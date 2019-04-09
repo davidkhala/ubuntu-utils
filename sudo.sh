@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 fcn=$1
-NOPASSWD(){
+
+NOPASSWD() {
     # dangerous: allow user run sudo without password
     local userGroup="sudo"
     echo "$userGroup  ALL=(ALL) NOPASSWD: ALL" | sudo tee --append /etc/sudoers
 }
-TIMEZONE(){
+TIMEZONE() {
     sudo dpkg-reconfigure tzdata # will have interactive operation
+}
+sshPass() {
+    if ! sshPass >/dev/null 2>&1; then
+        sudo apt install sshpass
+    fi
 }
 $fcn
