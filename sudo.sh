@@ -9,9 +9,5 @@ NOPASSWD() {
 TIMEZONE() {
     sudo dpkg-reconfigure tzdata # will have interactive operation
 }
-sshPass() {
-    if ! sshPass >/dev/null 2>&1; then
-        sudo apt install sshpass
-    fi
-}
+
 $fcn
