@@ -9,5 +9,8 @@ NOPASSWD() {
 TIMEZONE() {
     sudo dpkg-reconfigure tzdata # will have interactive operation
 }
+systemUpgrade(){
+    sudo do-release-upgrade
+}
 
 $fcn
