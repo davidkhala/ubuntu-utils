@@ -14,6 +14,7 @@ function start() {
 }
 function setRootPassword() {
 	echo "targeted new password [$1]"
-	mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
+	sudo mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
+	sudo systemctl restart mysql
 }
 $1 $remain_params
