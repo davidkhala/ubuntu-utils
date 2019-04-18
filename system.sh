@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 fcn=$1
-
+remain_params=""
+for ((i = 2; i <= $#; i++)); do
+    j=${!i}
+    remain_params="$remain_params $j"
+done
 NOPASSWD() {
     # dangerous: allow user run sudo without password
     local userGroup="sudo"
@@ -9,8 +13,7 @@ NOPASSWD() {
 TIMEZONE() {
     sudo dpkg-reconfigure tzdata # will have interactive operation
 }
-systemUpgrade(){
+systemUpgrade() {
     sudo do-release-upgrade
 }
-
-$fcn
+$fcn $remain_params
