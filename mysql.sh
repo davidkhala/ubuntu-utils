@@ -17,4 +17,7 @@ function setRootPassword() {
 	sudo mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
 	sudo systemctl restart mysql
 }
+connectionPoolSize(){
+	sudo mysql -u root -p -e 'SHOW VARIABLES LIKE "max_connections"'
+}
 $1 $remain_params
