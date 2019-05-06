@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 set -e
+fcn=$1
+remain_params=""
+for ((i = 2; i <= $#; i++)); do
+    j=${!i}
+    remain_params="$remain_params $j"
+done
 install9() {
     local installTarget=$1
     if [ ! -d "$installTarget" ]; then
@@ -10,3 +16,4 @@ install9() {
     tar xzf apache-tomcat-9.0.19.tar.gz
     sudo mv apache-tomcat-9.0.19 $installTarget
 }
+$fcn $remain_params
