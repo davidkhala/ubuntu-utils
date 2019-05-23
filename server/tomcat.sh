@@ -15,5 +15,6 @@ install9() {
     wget https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.19/bin/apache-tomcat-9.0.19.tar.gz
     tar xzf apache-tomcat-9.0.19.tar.gz
     sudo mv apache-tomcat-9.0.19 $installTarget
+    rm apache-tomcat-9.0.19.tar.gz
 }
 $fcn $remain_params
