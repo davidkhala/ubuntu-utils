@@ -21,7 +21,7 @@ genRSA() {
     ssh-add $rsaKeyPrv
 }
 copyRSAPub(){
-    sudo apt install -y xclip
+    sudo apt install -qq -y xclip
     xclip -sel clip < ~/.ssh/id_rsa.pub
 }
 $1
