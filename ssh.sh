@@ -20,8 +20,12 @@ genRSA() {
     rsaKeyPrv=${rsaKeyPrv:-"$HOME/.ssh/id_rsa"}
     ssh-add $rsaKeyPrv
 }
-copyRSAPub(){
+copyRSAPub() {
     sudo apt install -qq -y xclip
-    xclip -sel clip < ~/.ssh/id_rsa.pub
+    # xclip does not work on ubuntu server: [Error: Can't open display: (null)]
+    if ! xclip -sel clip <~/.ssh/id_rsa.pub; then
+        echo xclip does not work on current terminal. Please manually copy following:
+        cat ~/.ssh/id_rsa.pub
+    fi
 }
 $1
