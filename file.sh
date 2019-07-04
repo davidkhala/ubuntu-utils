@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-function symbolicLink(){
+symbolicLink(){
     local targetSrc=$1
     local link=$2
     sudo ln -s $1 $2
 }
+$1 $2 $3

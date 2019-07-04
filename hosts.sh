@@ -5,10 +5,10 @@ for ((i = 2; i <= $#; i++)); do
 	j=${!i}
 	remain_params="$remain_params $j"
 done
-function get() {
+get() {
 	hostname
 }
-function changeHostName() {
+changeHostName() {
 	local oldHostName=$(hostname)
 	local newHostName=$1
 	read -p " change hostname from \"${oldHostName}\" to \"${newHostName}\" ? (y/n)" choice
@@ -29,7 +29,7 @@ function changeHostName() {
 	esac
 
 }
-function addHostMap() {
+addHostMap() {
 	local ip=$1
 	local mapHostName=$2
 	if grep "$mapHostName" /etc/hosts; then
