@@ -5,10 +5,10 @@ install() {
 }
 installApacheInterpretor() {
     # https://stackoverflow.com/questions/2712825/what-is-mod-php
-    sudo apt install libapache2-mod-php
+    sudo apt install -y libapache2-mod-php
 }
 installMySQLConnector() {
-    sudo apt install php-mysql
+    sudo apt install -y php-mysql
 }
 
 installImageLib() {
