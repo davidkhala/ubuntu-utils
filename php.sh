@@ -44,4 +44,8 @@ installBuildHead() {
 check() {
     php -r 'echo "\n\nYour PHP installation is working fine.\n\n\n";'
 }
+installComposer() {
+    wget https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer -O - -q | php -- --quiet
+    sudo mv composer.phar /usr/local/bin/composer
+}
 $1
