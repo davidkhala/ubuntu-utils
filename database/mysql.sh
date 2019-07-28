@@ -5,7 +5,9 @@ for ((i = 2; i <= $#; i++)); do
 	remain_params="$remain_params $j"
 done
 install() {
-	sudo apt install mysql-server
+	if ! mysql --version; then
+		sudo apt install mysql-server
+	fi
 }
 installWorkBench() {
 	sudo apt install mysql-workbench

@@ -48,4 +48,10 @@ installComposer() {
     wget https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer -O - -q | php -- --quiet
     sudo mv composer.phar /usr/local/bin/composer
 }
+installPHPMyAdmin() {
+    ./server/apache.sh install
+    install
+    ./database/mysql.sh install
+    sudo apt install -y phpmyadmin
+}
 $1
