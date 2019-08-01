@@ -10,4 +10,12 @@ prepare() {
     git config --global user.email $email
     git config --global user.name $name
 }
+switchBranch() {
+    local branchName=$1
+    echo "switching to branch origin/$branchName"
+    git checkout -b $branchName
+    git fetch
+    git branch --set-upstream-to=origin/$branchName $branchName
+    git pull
+}
 $1
