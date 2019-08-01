@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+set -e
+remain_params=""
+for ((i = 2; i <= ${#}; i++)); do
+    j=${!i}
+    remain_params="$remain_params $j"
+done
 upgrade() {
     sudo add-apt-repository ppa:git-core/ppa -y
     sudo apt update
@@ -18,4 +24,4 @@ switchBranch() {
     git branch --set-upstream-to=origin/$branchName $branchName
     git pull
 }
-$1
+$1 $remain_params
