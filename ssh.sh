@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
 set -e
+remain_params=""
+for ((i = 2; i <= ${#}; i++)); do
+	j=${!i}
+	remain_params="$remain_params $j"
+done
 sshPass() {
     if ! sshPass >/dev/null 2>&1; then
         sudo apt install sshpass
     fi
+}
+skipHostStrict(){
+    local _host=${1:-git@github.com}
+    ssh -o StrictHostKeyChecking=no ${_host}
 }
 genRSA() {
     local keySize
@@ -33,4 +42,4 @@ copyRSAPub() {
         cat ~/.ssh/id_rsa.pub
     fi
 }
-$1
+$1 ${remain_params}
