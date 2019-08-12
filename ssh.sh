@@ -12,7 +12,9 @@ sshPass() {
 }
 skipHostStrict(){
     local _host=${1:-git@github.com}
+    set +e
     ssh -o StrictHostKeyChecking=no ${_host}
+    set -e
 }
 genRSA() {
     local keySize

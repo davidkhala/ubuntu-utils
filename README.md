@@ -9,3 +9,10 @@
 - Date formatter in shell  
 https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/
 ## TODO
+- skipHostStrict seemingly success with $? == 1
+```bash
+PTY allocation request failed on channel 0
+Hi davidkhala! You've successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed.
+
+```
