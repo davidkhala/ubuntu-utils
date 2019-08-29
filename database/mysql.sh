@@ -17,7 +17,11 @@ start() {
 }
 setRootPassword() {
 	echo "targeted new password [$1]"
-	sudo mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
+	local passwordOpt="-p";
+	if [[ -n "$2" ]];then
+		passwordOpt="--password=$2"
+	fi
+	sudo mysql -u root ${passwordOpt} -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
 	sudo systemctl restart mysql
 }
 connectionPoolSize() {
