@@ -27,10 +27,11 @@ installXMLLib() {
     # A php library for building xml-rpc clients and servers.
     sudo apt install php-xmlrpc
 }
-installDevPack() {
-    # PEAR: PHP Extension and Application Repository: php package manager [php-xml included]
+installPEAR() {
+    echo [deprecated]PEAR: PHP Extension and Application Repository [php-xml included] # php package manager
     sudo apt install -y php-pear
-
+}
+installDevPack() {
     # cUrl in php: http reqesut library https://stackoverflow.com/questions/3062324/what-is-curl-in-php
     sudo apt install -y php-curl
 
