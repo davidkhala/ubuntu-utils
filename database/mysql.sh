@@ -13,7 +13,7 @@ installWorkBench() {
 	sudo apt install mysql-workbench
 }
 start() {
-	systemctl start mysql
+	sudo systemctl start mysql
 }
 setRootPassword() {
 	echo "targeted new password [$1]"
