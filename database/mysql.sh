@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 remain_params=""
 for ((i = 2; i <= $#; i++)); do
 	j=${!i}
