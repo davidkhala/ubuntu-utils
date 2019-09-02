@@ -15,6 +15,10 @@ installWorkBench() {
 start() {
 	sudo systemctl start mysql
 }
+setup() {
+	install
+	start
+}
 setRootPassword() {
 	echo "targeted new password [$1]"
 	local passwordOpt="-p";
