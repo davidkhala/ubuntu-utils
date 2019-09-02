@@ -23,7 +23,7 @@ setRootPassword() {
 	echo "targeted new password [$1]"
 	local passwordOpt="-p";
 	if [[ -n "$2" ]];then
-		if [[ "$2" == "--init" ]]; then
+		if [[ "$2" == "init" ]]; then
 			passwordOpt=""
 		fi
 		passwordOpt="--password=$2"
