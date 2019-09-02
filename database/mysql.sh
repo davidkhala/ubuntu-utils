@@ -22,12 +22,13 @@ setup() {
 }
 setRootPassword() {
 	echo "targeted new password [$1]"
-	local passwordOpt="-p";
-	if [[ -n "$2" ]];then
-		if [[ "$2" == "init" ]]; then
+	local passwordOpt="-p"
+	if [[ -n "$2" ]]; then
+		if [[ "$2" == "--init" ]]; then
 			passwordOpt=""
+		else
+			passwordOpt="--password=$2"
 		fi
-		passwordOpt="--password=$2"
 	fi
 	sudo mysql -u root ${passwordOpt} -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
 	sudo systemctl restart mysql
