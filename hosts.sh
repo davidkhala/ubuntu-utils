@@ -65,4 +65,9 @@ addHostMap() {
 	fi
 
 }
+hostIP() {
+	# for docker container connect to docker host machine
+	# run it in host terminal
+	/sbin/ip route | awk '/default/ { print $3 }'
+}
 $fcn $remain_params
