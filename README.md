@@ -9,9 +9,9 @@
 - Date formatter in shell  
 https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/
 - To remove all the contents of the folder but not the folder itself:
-```
-rm -rf /path/to/directory/*
-```
+  ```
+  rm -rf /path/to/directory/*
+  ```
 ## TODO
 - skipHostStrict seemingly success with $? == 1
 ```bash
