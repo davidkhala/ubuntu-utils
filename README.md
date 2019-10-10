@@ -8,6 +8,10 @@
     If this option is present, or if no arguments remain after option processing, then commands are read from the standard input. This option allows the positional parameters to be set when invoking an interactive shell or when reading input through a pipe.
 - Date formatter in shell  
 https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/
+- To remove all the contents of the folder but not the folder itself:
+```
+rm -rf /path/to/directory/*
+```
 ## TODO
 - skipHostStrict seemingly success with $? == 1
 ```bash
