@@ -16,4 +16,7 @@ TIMEZONE() {
 systemUpgrade() {
     sudo do-release-upgrade
 }
+securityUpgrade() {
+    sudo unattended-upgrade
+}
 $fcn $remain_params
