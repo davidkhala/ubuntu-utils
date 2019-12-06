@@ -19,4 +19,10 @@ systemUpgrade() {
 securityUpgrade() {
     sudo unattended-upgrade
 }
+viewDiskVolumes(){
+    lsblk
+}
+rePartition(){
+    echo "[sample] sudo growpart /dev/xvda 1"
+}
 $fcn $remain_params
