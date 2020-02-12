@@ -19,10 +19,16 @@ systemUpgrade() {
 securityUpgrade() {
     sudo unattended-upgrade
 }
-viewDiskVolumes(){
+viewDiskVolumes() {
     lsblk
 }
-rePartition(){
+extendPartition() {
     echo "[sample] sudo growpart /dev/xvda 1"
+}
+viewFileSystem() {
+    df -h
+}
+extendFileSystem() {
+    echo "sudo resize2fs /dev/xvda1"
 }
 $fcn $remain_params
