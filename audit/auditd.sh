@@ -3,7 +3,7 @@ install(){
   # what is audispd-plugins
 }
 start(){
-  service auditd start ubuntu-utils/ audit/
+  service auditd start
 
 }
 $1
