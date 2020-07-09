@@ -27,6 +27,9 @@ auditDocker() {
   sudo auditctl -w /usr/bin/dockerd
   sudo auditctl -w /usr/bin/docker-init
   sudo auditctl -w /usr/bin/docker-proxy
+  sudo auditctl -w /var/run/docker.sock
+  sudo auditctl -w /var/run/containerd/
+  sudo auditctl -w /var/run/docker/
 
 }
 report() {
