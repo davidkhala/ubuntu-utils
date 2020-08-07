@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
-fcn="$1"
-remain_params=""
-for ((i = 2; i <= $#; i++)); do
-	j=${!i}
-	remain_params="$remain_params $j"
-done
+# Cron syntax viewer website: https://crontab.guru/
 sysCronTab="/etc/crontab"
 addJob() {
     local newLine=$remain_params
@@ -16,5 +11,5 @@ viewLog(){
     SYSLOG=/var/log/syslog
     sudo grep cron $SYSLOG
 }
-$fcn $remain_params
+"$@"
 
