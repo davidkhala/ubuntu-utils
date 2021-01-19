@@ -24,4 +24,4 @@ switchBranch() {
     git branch --set-upstream-to=origin/$branchName $branchName
     git pull
 }
-$1 $remain_params
+$@
