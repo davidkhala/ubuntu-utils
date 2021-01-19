@@ -13,15 +13,10 @@ systemUpgrade() {
 securityUpgrade() {
     sudo unattended-upgrade
 }
-viewDiskVolumes() {
-    lsblk
-}
 extendPartition() {
     echo "[sample] sudo growpart /dev/xvda 1"
 }
-viewFileSystem() {
-    df -h
-}
+
 extendFileSystem() {
     echo "sudo resize2fs /dev/xvda1"
 }
