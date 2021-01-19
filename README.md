@@ -1,5 +1,8 @@
 # ubuntu-utils
 
+Ubuntu utils
+  - common utils for all Linux Distro have been split into [linux-utils](../linux-utils)
+
 ## Notes
 
 - aws-scripts-mon is about to become legacy
