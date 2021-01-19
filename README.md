@@ -1,7 +1,7 @@
 # ubuntu-utils
 
 Ubuntu utils
-  - common utils for all Linux Distro have been split into [linux-utils](../linux-utils)
+  - common utils for all Linux Distro have been split and migrated to [linux-utils](https://github.com/davidkhala/linux-utils)
 
 ## Notes
 
