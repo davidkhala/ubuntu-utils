@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
-fcn="$1"
-remain_params=""
-for ((i = 2; i <= $#; i++)); do
-	j=${!i}
-	remain_params="$remain_params $j"
-done
 get() {
 	hostname
 }
@@ -70,4 +64,4 @@ hostIP() {
 	# run it in host terminal
 	/sbin/ip route | awk '/default/ { print $3 }'
 }
-$fcn $remain_params
+$@
