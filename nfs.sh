@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
-fcn=$1
-remain_params=""
-for ((i = 2; i <= $#; i++)); do
-	j=${!i}
-	remain_params="$remain_params $j"
-done
+
 # setting="nfs defaults 0 0"
 setting="nfs rsize=8192,wsize=8192,timeo=14,intr,user" # https://askubuntu.com/questions/546176/nfs-partition-not-mounted-automatically-at-boot-time-anymore
 fstab="/etc/fstab"
@@ -80,4 +75,4 @@ startHost() {
 	#	systemctl start nfs-kernel-server.service?
 	/etc/init.d/nfs-kernel-server restart
 }
-$fcn $remain_params
+$@

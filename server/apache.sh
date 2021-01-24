@@ -7,4 +7,4 @@ service() {
     sudo service apache2 $action
 }
 
-$1 $2
+$@

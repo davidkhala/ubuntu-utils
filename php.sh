@@ -55,4 +55,4 @@ installPHPMyAdmin() {
     ./database/mysql.sh install
     sudo apt install -y phpmyadmin
 }
-$1
+$@

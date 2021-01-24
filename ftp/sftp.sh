@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 set -e
-remain_params=""
-for ((i = 2; i <= $#; i++)); do
-        j=${!i}
-        remain_params="$remain_params $j"
-done
 
 usualHelp() {
         # cd path                            Change remote directory to 'path'
@@ -28,4 +23,4 @@ tty() {
         echo entering interactive sftp...
         sshpass -p ${sftpPassword} sftp ${sftpUser}@${sftpHost}
 }
-$1 ${remain_params}
+$@
