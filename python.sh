@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-setPython2(){
-    alias python=python2
-}
+
 setPython3(){
-    alias python=python3
+    python-is-python3
 }
 installPIP3(){
     sudo apt install python3-pip
