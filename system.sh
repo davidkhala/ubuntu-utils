@@ -20,4 +20,8 @@ extendPartition() {
 extendFileSystem() {
     echo "sudo resize2fs /dev/xvda1"
 }
+isLTS() {
+	lsb_release -d | grep "Ubuntu 20."
+	return $?
+}
 $@
