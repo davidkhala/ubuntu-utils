@@ -12,4 +12,7 @@ installPIP2(){
 installDjango(){
     pip3 install django
 }
+installPython2(){
+    sudo apt install python
+}
 $1
