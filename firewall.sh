@@ -5,7 +5,7 @@ enable(){
   sudo ufw enable
 }
 allowAll(){
-  sudo ufw allow from 0.0.0.0/0
+  sudo ufw default allow incoming
 }
 disable(){
   sudo ufw disable
