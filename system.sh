@@ -14,7 +14,7 @@ securityUpgrade() {
     sudo unattended-upgrade
 }
 extendPartition() {
-    echo "[sample] sudo growpart /dev/xvda 1"
+    echo "sudo growpart /dev/xvda 1"
 }
 
 extendFileSystem() {
