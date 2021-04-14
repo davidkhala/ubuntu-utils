@@ -1,20 +1,23 @@
 #!/usr/bin/env bash
-set -e -x
+set -e
 install() {
 	if ! mysql --version; then
 		sudo apt-get install mysql-server -y
-		if [[ "$1" != "insecure" ]]; then
+		if [[ "$1" == "secure" ]]; then
 			sudo mysql_secure_installation utility
 		fi
 
 	fi
 }
 purge() {
-	sudo rm -rf /var/lib/mysql/mysql
-	sudo apt-get --purge -y remove mysql-server mysql-common mysql-client
+	set +e
+	sudo systemctl stop mysql
+	set -e
+	sudo apt purge -y mysql-server mysql-client mysql-common
+	sudo rm -rf /etc/mysql /var/lib/mysql /var/log/mysql
+
 	sudo apt-get -y autoremove
 	sudo apt-get autoclean
-
 }
 installWorkBench() {
 	sudo apt install mysql-workbench
