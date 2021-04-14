@@ -18,8 +18,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - run: ./mysql.sh setup
-      - run: sudo cat /etc/mysql/debian.cnf
-      - run: mysql --protocol=tcp -h 127.0.0.1 -uroot -ppassword
       - run: ./mysql.sh setRootPassword password --init
       
       

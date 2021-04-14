@@ -27,7 +27,7 @@ setRootPassword() {
 			passwordOpt="--password=$2"
 		fi
 	fi
-	sudo mysql -h 127.0.0.1 -u root ${passwordOpt} -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
+	sudo mysql -u root ${passwordOpt} -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
 	sudo systemctl restart mysql
 }
 connectionPoolSize() {
