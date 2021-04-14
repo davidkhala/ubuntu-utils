@@ -10,8 +10,11 @@ install() {
 	fi
 }
 purge() {
+	sudo rm -rf /var/lib/mysql/mysql
 	sudo apt-get --purge -y remove mysql-server mysql-common mysql-client
-	sudo apt -y autoremove
+	sudo apt-get -y autoremove
+	sudo apt-get autoclean
+
 }
 installWorkBench() {
 	sudo apt install mysql-workbench
@@ -35,7 +38,7 @@ setRootPassword() {
 		fi
 	fi
 
-	sudo mysql -h localhost -u root ${passwordOpt} -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
+	sudo mysql -u root ${passwordOpt} -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
 	sudo systemctl restart mysql
 }
 connectionPoolSize() {

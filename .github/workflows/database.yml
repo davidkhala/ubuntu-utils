@@ -1,6 +1,6 @@
 name: database
 
-on: push
+on: workflow_dispatch
 defaults:
   run:
     working-directory: database
@@ -8,10 +8,7 @@ jobs:
   # This workflow contains a single job called "build"
   mysql:
     # The type of runner that the job will run on
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, ubuntu-18.04]
+    runs-on: [self-hosted, linux]
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
