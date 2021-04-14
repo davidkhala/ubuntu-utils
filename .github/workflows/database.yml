@@ -1,10 +1,9 @@
-
 name: database
 
 on: push
 defaults:
-      run:
-        working-directory: database
+  run:
+    working-directory: database
 jobs:
   # This workflow contains a single job called "build"
   mysql:
@@ -17,7 +16,5 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - run: ./mysql.sh setup
-      - run: ./mysql.sh setRootPassword password --init
-      
-      
+      - run: sudo systemctl restart mysql
+      - run: ./mysql.sh setRootPassword password

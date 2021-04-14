@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-set -e
+set -e -x
 install() {
 	if ! mysql --version; then
 		sudo apt install mysql-server -y
+		if [[ "$1" != 'insecure' ]]; then
+			sudo mysql_secure_installation utility
+		fi
+
 	fi
 }
 installWorkBench() {
@@ -14,7 +18,6 @@ start() {
 setup() {
 	install
 	start
-	sleep 10
 }
 setRootPassword() {
 	echo "targeted new password [$1]"
@@ -27,7 +30,8 @@ setRootPassword() {
 			passwordOpt="--password=$2"
 		fi
 	fi
-	sudo mysql -u root ${passwordOpt} -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'"
+
+	sudo mysql -h 127.0.0.1 -u root ${passwordOpt} -e "UPDATE mysql.user SET authentication_string = PASSWORD('$1') WHERE User = 'root';" ## FIXME remove -h
 	sudo systemctl restart mysql
 }
 connectionPoolSize() {
