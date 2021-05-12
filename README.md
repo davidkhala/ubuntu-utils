@@ -9,7 +9,7 @@ Ubuntu utils
 sudo apt-get update
 sudo apt-get install ubuntu-desktop
 sudo reboot
-``
+```
 
 ## TODO
 - skipHostStrict seemingly success with $? == 1
