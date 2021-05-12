@@ -1,3 +1,3 @@
 
-1. `sudo apt install tigervnc-standalone-server tigervnc-common`
+1. `sudo apt install tigervnc-standalone-server`
 2. `vncserver`
