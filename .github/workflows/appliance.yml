@@ -1,0 +1,14 @@
+name: Appliance installer
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install 
+        run: |
+          ./virtualbox.sh install
+
+      
