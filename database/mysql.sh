@@ -30,7 +30,7 @@ setup() {
 	start
 }
 setRootPassword() {
-	curl https://raw.githubusercontent.com/davidkhala/mysql-toolset/main/mysql.sh | bash -s setRootPassword $1 $2
+	curl -s https://raw.githubusercontent.com/davidkhala/mysql-toolset/main/mysql.sh | bash -s setRootPassword $1 $2
 }
 connectionPoolSize() {
 	curl https://raw.githubusercontent.com/davidkhala/mysql-toolset/main/mysql.sh | bash -s connectionPoolSize
