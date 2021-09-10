@@ -2,6 +2,7 @@
 set -e
 
 sshPass() {
+    # The sshpass utility is designed to run SSH using the keyboard-interactive password authentication mode, but in a non-interactive way
     if ! sshPass >/dev/null 2>&1; then
         sudo apt install sshpass
     fi
