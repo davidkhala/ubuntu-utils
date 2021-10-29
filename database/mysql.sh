@@ -11,7 +11,7 @@ install() {
 }
 
 installRouter() {
-	sudo apt install - mysql-router-community
+	sudo apt install -y mysql-router-community
 }
 
 purge() {
