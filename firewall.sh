@@ -3,6 +3,8 @@ reset(){
   sudo iptables --flush
   
 }
-
+installFirewalld(){
+  sudo apt -y install firewalld
+}
 
 $@
