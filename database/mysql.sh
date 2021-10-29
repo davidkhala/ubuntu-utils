@@ -9,6 +9,11 @@ install() {
 
 	fi
 }
+
+installRouter() {
+	sudo apt install - mysql-router-community
+}
+
 purge() {
 	set +e
 	sudo systemctl stop mysql
