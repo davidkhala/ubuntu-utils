@@ -13,5 +13,6 @@ install(){
 installLTS(){
     curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
     sudo apt-get -qq install -y nodejs
+    sudo npm install -g npm@latest
 }
 $@
