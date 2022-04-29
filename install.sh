@@ -1,7 +1,7 @@
 vi(){
   sudo apt-get install vim
 }
-jQ(){
+jq(){
   sudo apt -qq install -y jq
 }
 $@
