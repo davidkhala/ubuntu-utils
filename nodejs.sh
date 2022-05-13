@@ -7,7 +7,7 @@ install12() {
 }
 install(){
     sudo apt-get -qq install -y nodejs
-    node --version # current 10.19.0
+    node --version # v12.22.9 (ubuntu 22)
     
 }
 installLTS(){
