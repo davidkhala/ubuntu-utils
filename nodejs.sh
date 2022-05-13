@@ -9,6 +9,8 @@ install(){
 installLTS(){
     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
     sudo apt-get install -y nodejs
+    # optional
     sudo npm install -g npm@latest
+    sudo apt-get install gcc g++ make
 }
 $@
