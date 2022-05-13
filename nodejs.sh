@@ -11,6 +11,6 @@ installLTS(){
     sudo apt-get install -y nodejs
     # optional
     sudo npm install -g npm@latest
-    sudo apt-get install gcc g++ make
+    sudo apt-get install -y gcc g++ make
 }
 $@
