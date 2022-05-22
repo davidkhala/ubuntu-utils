@@ -11,6 +11,7 @@ TIMEZONE() {
     sudo dpkg-reconfigure tzdata # will have interactive operation
 }
 systemUpgrade() {
+    sudo apt install -y upgrade-manager-core
     sudo do-release-upgrade
 }
 securityUpgrade() {
