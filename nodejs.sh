@@ -6,12 +6,13 @@ install(){
     node --version # v12.22.9 (ubuntu 22)
     
 }
-installLTS(){
+install-LTS(){
     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
     sudo apt-get install -y nodejs
-    # optional
+}
+build-essential(){
+    
     sudo npm install -g npm@latest
     sudo apt-get install -y build-essential
-
 }
 $@
