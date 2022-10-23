@@ -8,7 +8,9 @@ install2(){
   sudo snap install docker
 }
 
-installCompose() {
-  sudo apt install -y docker-compose
+install-compose() {
+  curl https://raw.githubusercontent.com/davidkhala/docker-manager/master/distro-repository.sh | bash -s ubuntu
+  curl https://raw.githubusercontent.com/davidkhala/docker-manager/master/docker-compose/install.sh | bash -s dpkg
+  
 }
 $@
