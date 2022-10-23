@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export SYSLOG=/var/log/syslog
 NOPASSWD() {
     # dangerous: allow user run sudo without password
     local userGroup="sudo"
@@ -28,4 +29,6 @@ isLTS() {
 	lsb_release -d | grep "Ubuntu 20."
 	return $?
 }
+
+
 $@
