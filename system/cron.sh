@@ -6,10 +6,9 @@ addJob() {
     echo "*  *	* * *	root	$newLine" | sudo tee -a $sysCronTab
     sudo /etc/init.d/cron restart
 }
-viewLog(){
+viewLog() {
     sudo /etc/init.d/cron restart
     SYSLOG=/var/log/syslog
     sudo grep cron $SYSLOG
 }
 "$@"
-

@@ -1,4 +1,4 @@
-install(){
-  sudo apt install virtualbox
+install() {
+  sudo apt install -y virtualbox
 }
 $@

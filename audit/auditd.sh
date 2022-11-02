@@ -10,7 +10,6 @@ config=/etc/audit/auditd.conf    # configuration file for audit daemon
 rules=/etc/audit/audit.rules     # audit rules
 logPath=/var/log/audit/audit.log # default log path
 
-
 auditDocker() {
 
   sudo auditctl -w /usr/bin/docker
@@ -22,6 +21,5 @@ auditDocker() {
   sudo auditctl -w /var/run/docker/
 
 }
-
 
 $@
