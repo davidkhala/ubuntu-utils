@@ -10,7 +10,7 @@ reset-firewall() {
 install-firewalld() {
   echo [WARN] firewalld will conflicts with docker interface and make ssh unavailable.
   sudo apt -y install firewalld
-  sudo firewall-cmd --permanent --add-service=ssh
+  sudo firewall-cmd --permanent --add-port=22/tcp
   sudo firewall-cmd --reload
 }
 
