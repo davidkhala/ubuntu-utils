@@ -5,6 +5,7 @@ install() {
   echo "export DOCKER_HOST=unix:///run/user/$UID/docker.sock" >>~/.bashrc
 }
 install2() {
+  # The Canonical re-distro of Docker
   sudo snap install docker
 }
 
