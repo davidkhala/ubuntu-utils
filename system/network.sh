@@ -9,6 +9,8 @@ reset-firewall() {
 }
 install-firewalld() {
   sudo apt -y install firewalld
+  sudo firewall-cmd --permanent --add-service=ssh
+  sudo firewall-cmd --reload
 }
 
 $@
