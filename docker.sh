@@ -4,9 +4,12 @@ install() {
   dockerd-rootless-setuptool.sh install
   echo "export DOCKER_HOST=unix:///run/user/$UID/docker.sock" >>~/.bashrc
 }
-install2() {
+install-desktop() {
   # The Canonical re-distro of Docker
+  # ubuntu server installation error: after installation, run `docker ps`
+  #   internal error, please report: running "docker" failed: transient scope could not be started, job /org/freedesktop/systemd1/job/46 finished with result failed
   sudo snap install docker
+  
 }
 
 install-compose() {
