@@ -3,6 +3,7 @@ install-netstat() {
   sudo apt install net-tools
 }
 allow-ssh() {
+  # TODO 
   sudo /usr/sbin/iptables-legacy -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 }
 
@@ -15,8 +16,7 @@ install-firewalld() {
   echo [WARN] firewalld will conflicts with docker interface and make ssh unavailable.
   sudo apt -y install firewalld
   sudo systemctl enable --now firewalld
-  sudo firewall-cmd --permanent --add-port=22/tcp
-  sudo firewall-cmd --reload
+  
 }
 
 $@
