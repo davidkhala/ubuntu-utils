@@ -4,8 +4,8 @@ install(){
   
   sudo apt install -y xrdp
   sudo systemctl enable --now xrdp
-  sudo ufw allow from any to any port 3389 proto tcp
-  sudo iptables --flush
+  sudo firewall-cmd --permanent --add-port=3389/tcp
+  sudo firewall-cmd --reload
 }
 
 $@
