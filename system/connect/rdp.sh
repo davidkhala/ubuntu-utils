@@ -10,7 +10,7 @@ install(){
 }
 configure(){
   # change crypt_level=high to crypt_level=None
-  vi /etc/xrdp/xrdp.ini file
+  vi /etc/xrdp/xrdp.ini
 }
 
 $@
