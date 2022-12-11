@@ -7,5 +7,11 @@ install(){
   sudo firewall-cmd --permanent --add-port=3389/tcp
   sudo firewall-cmd --reload
 }
+setup() {
+  sudo passwd root
+  echo "Please use user `root` or other user with password Auth to initialize the Ubuntu Desktop via RDP first"
+  echo "- The default ssh key-pair user like `ubuntu` cannot login to RDP, even though it has password set"
+  
+}
 
 $@
