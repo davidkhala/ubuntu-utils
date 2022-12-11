@@ -8,6 +8,9 @@ install(){
   sudo firewall-cmd --reload
   echo "Usage Tips: https://github.com/davidkhala/linux-utils/wiki/Connect-RDP"
 }
-
+configure(){
+  # change crypt_level=high to crypt_level=None
+  vi /etc/xrdp/xrdp.ini file
+}
 
 $@
