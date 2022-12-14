@@ -5,17 +5,15 @@ NOPASSWD() {
     local userGroup="sudo"
     echo "$userGroup  ALL=(ALL) NOPASSWD: ALL" | sudo tee --append /etc/sudoers
 }
-SETPASSWD() {
-    sudo passwd
-}
+
 TIMEZONE() {
     sudo dpkg-reconfigure tzdata # will have interactive operation
 }
-systemUpgrade() {
+system-upgrade() {
     sudo apt install -y upgrade-manager-core
     sudo do-release-upgrade
 }
-securityUpgrade() {
+security-upgrade() {
     sudo unattended-upgrade
 }
 
