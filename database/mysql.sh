@@ -10,7 +10,7 @@ install() {
 	fi
 }
 
-installShell(){
+install-shell(){
   wget https://repo.mysql.com/mysql-apt-config_0.8.18-1_all.deb
   sudo apt-get install ./mysql-apt-config_0.8.18-1_all.deb
   rm mysql-apt-config_0.8.18-1_all.deb
@@ -19,7 +19,7 @@ installShell(){
 
 }
 
-installRouter() {
+install-router() {
 	sudo apt install -y mysql-router-community
 }
 
@@ -33,7 +33,7 @@ purge() {
 	sudo apt-get -y autoremove
 	sudo apt-get autoclean
 }
-installWorkBench() {
+install-workbench() {
 	sudo apt install mysql-workbench
 }
 start() {
@@ -43,10 +43,10 @@ setup() {
 	install
 	start
 }
-setRootPassword() {
+set-root-password() {
 	curl -s https://raw.githubusercontent.com/davidkhala/mysql-toolset/main/mysql.sh | bash -s setRootPassword $1 $2
 }
-connectionPoolSize() {
+connection-pool-size() {
 	curl https://raw.githubusercontent.com/davidkhala/mysql-toolset/main/mysql.sh | bash -s connectionPoolSize
 	
 }

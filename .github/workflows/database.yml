@@ -7,14 +7,11 @@ defaults:
     working-directory: database
 jobs:
   mysql:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-latest, ubuntu-18.04 ]
+    runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - run: ./mysql.sh purge
       - run: ./mysql.sh install insecure
       - run: ./mysql.sh start
-      - run: ./mysql.sh setRootPassword password --init
+      - run: ./mysql.sh set-root-password password --init
