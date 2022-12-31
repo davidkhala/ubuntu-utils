@@ -3,12 +3,19 @@ on:
   push:
   workflow_dispatch:
 jobs:
-  build:
+  apps:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: install 
-        run: |
-          ./virtualbox.sh install
-
+      - run: ./vbox.sh install
+      - run: ./minio.sh install-server
+  docker:  
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+        ./docker.sh install-desktop
+        docker ps
+      - run: |
+        ./docker.sh install
+        docker ps
       
