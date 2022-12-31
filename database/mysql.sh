@@ -37,17 +37,17 @@ install-workbench() {
 	sudo apt install mysql-workbench
 }
 start() {
-	sudo systemctl start mysql
+	sudo systemctl enable --now mysql
 }
 setup() {
 	install
 	start
 }
 set-root-password() {
-	curl -s https://raw.githubusercontent.com/davidkhala/mysql-toolset/main/mysql.sh | bash -s setRootPassword $1 $2
+	curl -s https://raw.githubusercontent.com/davidkhala/mysql-toolset/main/mysql.sh | bash -s set-root-password $1 $2
 }
 connection-pool-size() {
-	curl https://raw.githubusercontent.com/davidkhala/mysql-toolset/main/mysql.sh | bash -s connectionPoolSize
+	curl https://raw.githubusercontent.com/davidkhala/mysql-toolset/main/mysql.sh | bash -s connection-pool-size
 	
 }
 $@
