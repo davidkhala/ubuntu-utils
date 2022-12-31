@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        ./docker.sh install-desktop;
-        docker ps
+          ./docker.sh install-desktop
+          docker ps
       - run: |
-        ./docker.sh install;
-        docker ps
+          ./docker.sh install
+          docker ps
       
