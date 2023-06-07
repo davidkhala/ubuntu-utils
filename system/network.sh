@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 install-netstat() {
-  sudo apt install net-tools
+  sudo apt install -y net-tools
+}
+install-nc(){
+  sudo apt-get install -y netcat
 }
 allow-ssh() {
   # TODO 
