@@ -1,8 +1,6 @@
 install() {
-  curl -sSL https://get.docker.com/ | sh
-  sudo apt-get install -y uidmap
-  dockerd-rootless-setuptool.sh install
-  echo "export DOCKER_HOST=unix:///run/user/$UID/docker.sock" >>~/.bashrc
+  curl https://raw.githubusercontent.com/davidkhala/linux-utils/main/apps/docker.sh | bash -s install-rootless
+  
 }
 install-desktop() {
   # The Canonical re-distro of Docker
@@ -14,10 +12,4 @@ remove-desktop() {
   sudo snap remove docker
 }
 
-install-compose() {
-  # TODO
-  curl https://raw.githubusercontent.com/davidkhala/docker-manager/master/distro-repository.sh | bash -s ubuntu
-  curl https://raw.githubusercontent.com/davidkhala/docker-manager/master/docker-compose/install.sh | bash -s dpkg
-
-}
 $@
