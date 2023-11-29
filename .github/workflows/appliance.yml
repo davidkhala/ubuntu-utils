@@ -2,6 +2,9 @@ name: Appliance installer
 on:
   push:
   workflow_dispatch:
+defaults:
+  run:
+    working-directory: apps
 jobs:
   apps:
     runs-on: ubuntu-latest
@@ -13,10 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - run: |
-          ./docker.sh install-desktop
-          docker ps
-      - run: ./docker.sh remove-desktop
       - run: |
           ./docker.sh install
           docker ps
