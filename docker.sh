@@ -1,4 +1,5 @@
 install() {
+  sudo apt-get install -y uidmap
   curl https://raw.githubusercontent.com/davidkhala/linux-utils/main/apps/docker.sh | bash -s install-rootless
   
 }
