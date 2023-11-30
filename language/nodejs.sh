@@ -11,10 +11,10 @@ install-LTS() {
     NODE_MAJOR=20
     echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
     
-    sudo apt-get install -y nodejs
+    sudo apt-get install -y nodejs npm
 }
 uninstall-LTS(){
-    sudo apt-get purge nodejs
+    sudo apt-get purge nodejs npm
     sudo rm -r /etc/apt/sources.list.d/nodesource.list
     sudo rm -r /etc/apt/keyrings/nodesource.gpg
 
