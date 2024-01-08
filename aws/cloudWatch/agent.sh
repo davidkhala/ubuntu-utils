@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -e
-CURRENT=$(cd $(dirname ${BASH_SOURCE}) && pwd)
 agentCommonConfigPath="/opt/aws/amazon-cloudwatch-agent/etc/common-config.toml"
 
 install() {
@@ -10,7 +9,7 @@ install() {
 }
 configGen() {
     sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
-    echo config.json created at /opt/aws/amazon-cloudwatch-agent/bin/config.json
+    vi /opt/aws/amazon-cloudwatch-agent/bin/config.json
 }
 start() {
     # TODO is it for ec2 only?
