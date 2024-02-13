@@ -22,4 +22,8 @@ status() {
 stop() {
     sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a stop
 }
+uninstall(){
+    sudo apt remove -y amazon-cloudwatch-agent
+}
 $@
+
