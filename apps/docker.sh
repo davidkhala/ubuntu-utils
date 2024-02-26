@@ -1,4 +1,4 @@
-
+set -e
 
 install() {
   sudo apt-get install -y uidmap
