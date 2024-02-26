@@ -1,4 +1,4 @@
-set -e -x
+set -e
 extend-disk() {
     #   Rescan 
     sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
@@ -10,6 +10,12 @@ extend-disk() {
 view-disk(){
     df -hT
     lsblk
+}
+open-port(){
+    sudo ufw enable
+    sudo ufw default allow incoming
+    sudo ufw default allow outgoing
+    sudo ufw status verbose
 }
 $@
  
