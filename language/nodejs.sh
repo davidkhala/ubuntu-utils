@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -e
 install() {
     sudo apt-get -qq install -y nodejs
     node --version # v12.22.9 (ubuntu 22)
