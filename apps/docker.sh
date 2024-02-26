@@ -1,6 +1,7 @@
 set -e
 
 install() {
+  sudo apt update
   sudo apt-get install -y uidmap
   echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc
   curl https://raw.githubusercontent.com/davidkhala/linux-utils/main/apps/docker.sh | bash -s install-rootless
