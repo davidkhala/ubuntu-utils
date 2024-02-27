@@ -12,10 +12,11 @@ view-disk(){
     lsblk
 }
 open-port(){
-    sudo ufw enable
-    sudo ufw default allow incoming
-    sudo ufw default allow outgoing
-    sudo ufw status verbose
+    iptables -P INPUT ACCEPT
+    iptables -P FORWARD ACCEPT
+    iptables -P OUTPUT ACCEPT
+    iptables -F
+    iptables -X
 }
 $@
  
