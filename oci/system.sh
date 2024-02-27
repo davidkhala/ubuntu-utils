@@ -12,9 +12,9 @@ view-disk(){
     lsblk
 }
 open-port(){
-    iptables -P INPUT ACCEPT
-    iptables -P FORWARD ACCEPT
-    iptables -P OUTPUT ACCEPT
+    sudo iptables -P INPUT ACCEPT
+    sudo iptables -P FORWARD ACCEPT
+    sudo iptables -P OUTPUT ACCEPT
     # TODO is following required?
     iptables -F # Flush the selected chain (all the chains in the table if none is given). This is equivalent to deleting all the rules one by one.
     iptables -X # If no argument is given, it will attempt to delete every non-builtin chain in the table.
