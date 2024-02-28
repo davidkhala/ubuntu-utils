@@ -6,7 +6,7 @@ install() {
   echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc
   curl https://raw.githubusercontent.com/davidkhala/linux-utils/main/apps/docker.sh | bash -s install-rootless
   
-  export PATH=$HOME/bin:$PATH # workaround for ubuntu ~/.bashrc
+  export PATH=$HOME/bin:$PATH # workaround for ubuntu ~/.bashrc # make this function needed to be called by `source`
   
 }
 install-desktop() {
