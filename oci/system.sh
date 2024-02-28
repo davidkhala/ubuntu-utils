@@ -7,17 +7,17 @@ extend-disk() {
     sudo growpart /dev/sda 1
     sudo resize2fs /dev/sda1
 }
-view-disk(){
+view-disk() {
     df -hT
     lsblk
 }
-open-port(){
+open-port() {
     sudo iptables -P INPUT ACCEPT
     sudo iptables -P FORWARD ACCEPT
     sudo iptables -P OUTPUT ACCEPT
-    # TODO is following required?
-    iptables -F # Flush the selected chain (all the chains in the table if none is given). This is equivalent to deleting all the rules one by one.
-    iptables -X # If no argument is given, it will attempt to delete every non-builtin chain in the table.
+    
+    sudo iptables -F # Flush the selected chain (all the chains in the table if none is given). This is equivalent to deleting all the rules one by one.
+
 }
 $@
  
