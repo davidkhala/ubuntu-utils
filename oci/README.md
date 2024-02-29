@@ -4,4 +4,6 @@
   - Ingress / Egress rules
   - Routing
   - firewall on the server:
-    - `curl https://github.com/davidkhala/ubuntu-utils/blob/master/oci/system.sh | bash -s open-port`
+    - `curl https://raw.githubusercontent.com/davidkhala/ubuntu-utils/master/oci/system.sh | bash -s open-port`
+   
+    
