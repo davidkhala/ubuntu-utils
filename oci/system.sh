@@ -17,6 +17,7 @@ open-port() {
     sudo iptables -P OUTPUT ACCEPT
     
     sudo iptables -F # Flush the selected chain (all the chains in the table if none is given). This is equivalent to deleting all the rules one by one.
+    sudo sh -c '/sbin/iptables-save > /etc/iptables/rules.v4' # https://www.cyberciti.biz/faq/how-to-save-iptables-firewall-rules-permanently-on-linux/
 
 }
 $@
