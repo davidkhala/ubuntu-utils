@@ -3,20 +3,34 @@ set -e
 install() {
   sudo apt update
   sudo apt-get install -y uidmap
-  echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc
+  echo "export PATH=$HOME/bin:$PATH" >>~/.bashrc
   curl https://raw.githubusercontent.com/davidkhala/linux-utils/main/apps/docker.sh | bash -s install-rootless
-  
+
   export PATH=$HOME/bin:$PATH # workaround for ubuntu ~/.bashrc # make this function needed to be called by `source`
-  
+
+}
+add-distro-repository() {
+  # Add Docker's official GPG key:
+  sudo apt-get update
+  sudo apt-get install -y ca-certificates curl
+  sudo install -m 0755 -d /etc/apt/keyrings
+  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+  # Add the repository to Apt sources:
+  echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+
+  sudo apt-get update
+
 }
 install-desktop() {
-  # The Canonical re-distro of Docker
-  # ubuntu server installation error: after installation, run `docker ps`
-  #   internal error, please report: running "docker" failed: transient scope could not be started, job /org/freedesktop/systemd1/job/46 finished with result failed
-  sudo snap install docker
-}
-remove-desktop() {
-  sudo snap remove docker
+  add-distro-repository
+  wget -O docker-desktop-amd64.deb https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-amd64.deb
+
+  sudo apt-get install -y ./docker-desktop-amd64.deb
+
 }
 
 $@
