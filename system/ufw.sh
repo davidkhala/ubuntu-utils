@@ -5,6 +5,11 @@ enable() {
     echo "WARN: After a reboot, ufw is always disabled."
     sudo ufw --force enable
 }
+allowBastion() {
+    sudo ufw allow ssh
+    sudo ufw allow icmp
+    reload
+}
 reload() {
     sudo ufw reload
 }
