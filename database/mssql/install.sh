@@ -8,10 +8,12 @@ repos() {
   sudo apt-get update
 }
 odbc() {
+  repos
   # Install the driver
   sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
 }
 sqlcmd() {
+  repos
   # optional: for bcp and sqlcmd
   sudo ACCEPT_EULA=Y apt-get install -y mssql-tools18
   echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >>~/.bashrc
