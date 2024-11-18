@@ -1,8 +1,8 @@
 
-setPython() {
+set-python() {
     sudo apt install -y python-is-python3
 }
-installPIP() {
+install-pip() {
     sudo apt install -y python3-pip
 }
 
