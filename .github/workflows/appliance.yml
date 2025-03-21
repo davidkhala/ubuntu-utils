@@ -25,6 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - run: ./backstage.sh prepare
-      - run: curl https://raw.githubusercontent.com/davidkhala/code-dev-collection/refs/heads/main/backstage/install.sh | bash -s install
+      - run: curl https://raw.githubusercontent.com/davidkhala/code-dev-collection/refs/heads/main/backstage/install.sh | bash -s install backstage
 
       
