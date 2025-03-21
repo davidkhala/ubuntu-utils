@@ -1,7 +1,7 @@
 name: Appliance installer
 on:
   schedule:
-     - cron:  '0 0 * * 2'
+    - cron:  '0 0 * * 2'
   workflow_dispatch:
 defaults:
   run:
@@ -20,5 +20,11 @@ jobs:
       - run: |
           ./docker.sh install
           docker ps
-          
+  backstage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - run: ./backstage.sh prepare
+      - run: curl https://raw.githubusercontent.com/davidkhala/code-dev-collection/refs/heads/main/backstage/install.sh | bash -s install
+
       
