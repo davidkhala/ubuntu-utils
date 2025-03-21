@@ -5,6 +5,8 @@ prepare(){
 
     curl -sSL https://raw.githubusercontent.com/davidkhala/ubuntu-utils/refs/heads/master/apps/docker.sh | bash -s install
     echo Y | yarn --version
+    
+    sudo apt install -y zlib1g-dev libc-ares-dev libbrotli-dev libnghttp2-dev libicu-dev # for yarn install
 
 }
 $@
