@@ -4,6 +4,8 @@ install() {
   sudo apt update
   sudo apt-get install -y uidmap
   echo "export PATH=$HOME/bin:$PATH" >>~/.bashrc
+  # https://github.com/rootless-containers/rootlesskit/issues/172#issuecomment-2122189550
+  echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
   curl https://raw.githubusercontent.com/davidkhala/linux-utils/refs/heads/main/apps/docker/install.sh | bash -s install-rootless
 
   export PATH=$HOME/bin:$PATH # workaround for ubuntu ~/.bashrc # make this function needed to be called by `source`
