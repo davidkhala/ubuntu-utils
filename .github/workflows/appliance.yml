@@ -3,6 +3,7 @@ on:
   schedule:
     - cron:  '0 0 * * 2'
   workflow_dispatch:
+  push:
 defaults:
   run:
     working-directory: apps
@@ -24,7 +25,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
+      - uses: actions/setup-node@main
+        with:
+          check-latest: true
+          node-version: 18.x
       - run: ./backstage.sh prepare
       - run: curl https://raw.githubusercontent.com/davidkhala/code-dev-collection/refs/heads/main/backstage/install.sh | bash -s install backstage
-
+      
       
