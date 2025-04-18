@@ -29,7 +29,7 @@ add-distro-repository() {
 }
 install-desktop() {
   add-distro-repository
-  wget -O docker-desktop-amd64.deb https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-amd64.deb
+  wget https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
 
   sudo apt-get install -y ./docker-desktop-amd64.deb
 
