@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -e
 install() {
-    sudo apt-get -qq install -y nodejs
+    sudo apt-get -qq install -y nodejs npm
     node --version # v18.19.1 (ubuntu 24)
+    npm --version # 9.2.0 (ubuntu 24)
 
 }
 install-LTS() {
