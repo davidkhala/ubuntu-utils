@@ -2,7 +2,7 @@
 set -e
 install() {
     sudo apt-get -qq install -y nodejs
-    node --version # v12.22.9 (ubuntu 22)
+    node --version # v18.19.1 (ubuntu 24)
 
 }
 install-LTS() {
