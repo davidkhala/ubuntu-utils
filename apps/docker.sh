@@ -31,7 +31,9 @@ install-desktop() {
   wget https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
 
   sudo apt-get install -y ./docker-desktop-amd64.deb
-
+  rm ./docker-desktop-amd64.deb
+  # Additional steps required for login
+  # https://docs.docker.com/desktop/setup/sign-in/#signing-in-with-docker-desktop-for-linux
 }
 
 $@
