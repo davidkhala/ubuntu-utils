@@ -1,4 +1,4 @@
-install(){
-  sudo snap install kubectl --classic  
+install() {
+  sudo snap install kubectl --classic
 }
 $@

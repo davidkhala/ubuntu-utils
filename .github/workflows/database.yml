@@ -18,3 +18,10 @@ jobs:
       - run: ./mysql.sh install insecure
       - run: ./mysql.sh start
       - run: ./mysql.sh set-root-password password --init
+  postgres:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - run: ./postgres.sh register
+      - run: ./postgres.sh install
+      - run: ./postgres.sh install-client

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-installViewer(){
+install-desktop() {
     sudo snap install redis-desktop-manager
 }

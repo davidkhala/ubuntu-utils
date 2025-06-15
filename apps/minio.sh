@@ -1,3 +1,4 @@
+set -e
 user=${2:-admin}
 password=${3:-password}
 path=${4:-/mnt/data}
