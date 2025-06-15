@@ -15,6 +15,7 @@ SQLPlus() {
 }
 
 instant-client-lite() {
+    # This cannot setup /opt/oracle/instantclient*
     wget https://download.oracle.com/otn_software/linux/instantclient/oracle-instantclient-basiclite-linuxx64.rpm
     sudo alien -i --scripts oracle-instantclient-basic*.rpm
     rm oracle-instantclient-basic*.rpm
