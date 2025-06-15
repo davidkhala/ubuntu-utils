@@ -25,3 +25,12 @@ jobs:
       - run: ./postgres.sh register
       - run: ./postgres.sh install
       - run: ./postgres.sh install-client
+  oracle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - run: sudo apt update
+      - run: sudo apt install -y alien
+      - run: ./oracle/install.sh SQLDeveloper
+      - run: ./oracle/install.sh SQLPlus
+      - run: ./oracle/install.sh instant-client-lite
