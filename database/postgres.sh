@@ -3,7 +3,7 @@ set -e
 register() {
     # Only if the version included in your version of Ubuntu is not the one you want
     sudo apt install -y postgresql-common
-    sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+    sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
 }
 install() {
     sudo apt install -y postgresql
