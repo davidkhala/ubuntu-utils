@@ -1,8 +1,7 @@
 name: database
 
 on: 
-  schedule:
-     - cron:  '0 0 * * 1'
+  push:
   workflow_dispatch:
   
 defaults:
@@ -34,3 +33,9 @@ jobs:
       - run: ./oracle/install.sh SQLDeveloper
       - run: ./oracle/install.sh SQLPlus
       - run: ./oracle/install.sh instant-client-lite
+  mssql:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - run: ./mssql/install.sh odbc
+      - run: ./mssql/install.sh sqlcmd
