@@ -10,7 +10,7 @@ TIMEZONE() {
     sudo dpkg-reconfigure tzdata # will have interactive operation
 }
 system-upgrade() {
-    sudo apt install -y upgrade-manager-core
+    sudo apt install -y ubuntu-release-upgrader-core
     sudo do-release-upgrade
 }
 security-upgrade() {
